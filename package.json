@@ -1,0 +1,43 @@
+{
+  "name": "@infoloop-opensource/common-utils",
+  "version": "0.0.1",
+  "description": "A collection of common utilities.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/es2015/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && npm run build:es2015 && npm run build:cjs",
+    "build:es2015": "tsc --declaration --skipLibCheck --module es2015 --target es2015 --outDir dist/es2015",
+    "build:cjs": "tsc --declaration --skipLibCheck --module commonjs --target es5 --outDir dist/cjs",
+    "test": "mocha -r ts-node/register --timeout 50000 --exit src/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infoloop-opensource/common-utils.git"
+  },
+  "keywords": [
+    "common",
+    "utils",
+    "utility"
+  ],
+  "author": "wenchao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infoloop-opensource/common-utils/issues"
+  },
+  "homepage": "https://github.com/infoloop-opensource/common-utils#readme",
+  "dependencies": {
+    "@infoloop-opensource/abstractions": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.5",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
+}
