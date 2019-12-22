@@ -1,6 +1,6 @@
 {
   "name": "@infoloop-opensource/common-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of common utilities.",
   "files": [
     "dist"
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/infoloop-opensource/common-utils#readme",
   "dependencies": {
-    "@infoloop-opensource/abstractions": "^0.1.2"
+    "@infoloop-opensource/abstractions": "^0.1.5"
   },
   "devDependencies": {
     "@types/chai": "^4.2.5",
