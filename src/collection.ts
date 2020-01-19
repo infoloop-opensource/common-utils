@@ -91,6 +91,15 @@ export function groupTransformedBy<T, KeyType, TargetType>(elements: T[],
         .reduce(ReducerFactory.getGroupByReducerWithTransformer(getter, transformer), new Map());
 }
 
+export function fillMap<K, V>(map: Map<K, V>, keys: K[], filler: Transformer<K, V>): Map<K, V> {
+    keys.forEach(key => {
+        if (!map.has(key)) {
+            map.set(key, filler(key));
+        }
+    });
+    return map;
+}
+
 export function intersection(a: number[], b: number[]): number[] {
     const sortedA = uniqueArray(a, (x, y) => x - y);
     const sortedB = uniqueArray(b, (x, y) => x - y);

@@ -6,6 +6,7 @@ export declare function toMap<T, KeyType>(elements: T[], getter: (T: any, ith?: 
 export declare function toTransformedMap<T, KeyType, TargetType>(elements: T[], getter: ArrayElementMapper<T, KeyType>, transformer: ArrayElementMapper<T, TargetType>): Map<KeyType, TargetType>;
 export declare function groupBy<T, KeyType>(elements: T[], getter: ArrayElementMapper<T, KeyType>): Map<KeyType, T[]>;
 export declare function groupTransformedBy<T, KeyType, TargetType>(elements: T[], getter: ArrayElementMapper<T, KeyType>, transformer: ArrayElementMapper<T, TargetType>): Map<KeyType, TargetType[]>;
+export declare function fillMap<K, V>(map: Map<K, V>, keys: K[], filler: Transformer<K, V>): Map<K, V>;
 export declare function intersection(a: number[], b: number[]): number[];
 export declare function difference(a: number[], b: number[]): number[];
 /**

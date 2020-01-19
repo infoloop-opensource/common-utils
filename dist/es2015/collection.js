@@ -66,6 +66,14 @@ export function groupTransformedBy(elements, getter, transformer) {
     return elements
         .reduce(ReducerFactory.getGroupByReducerWithTransformer(getter, transformer), new Map());
 }
+export function fillMap(map, keys, filler) {
+    keys.forEach(key => {
+        if (!map.has(key)) {
+            map.set(key, filler(key));
+        }
+    });
+    return map;
+}
 export function intersection(a, b) {
     const sortedA = uniqueArray(a, (x, y) => x - y);
     const sortedB = uniqueArray(b, (x, y) => x - y);

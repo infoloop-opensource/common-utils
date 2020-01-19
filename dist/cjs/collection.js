@@ -75,6 +75,15 @@ function groupTransformedBy(elements, getter, transformer) {
         .reduce(ReducerFactory.getGroupByReducerWithTransformer(getter, transformer), new Map());
 }
 exports.groupTransformedBy = groupTransformedBy;
+function fillMap(map, keys, filler) {
+    keys.forEach(function (key) {
+        if (!map.has(key)) {
+            map.set(key, filler(key));
+        }
+    });
+    return map;
+}
+exports.fillMap = fillMap;
 function intersection(a, b) {
     var sortedA = uniqueArray(a, function (x, y) { return x - y; });
     var sortedB = uniqueArray(b, function (x, y) { return x - y; });
