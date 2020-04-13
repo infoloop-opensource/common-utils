@@ -67,7 +67,7 @@ export function uniqueField<T, D>(elements: T[], getter: Transformer<T, D>, comp
     return uniqueArray(elements.map(getter), comparator);
 }
 
-export function toMap<T, KeyType>(elements: T[], getter: (T, ith?: number) => KeyType): Map<KeyType, T> {
+export function toMap<T, KeyType>(elements: T[], getter: (element: T, ith?: number) => KeyType): Map<KeyType, T> {
     return elements
         .reduce(ReducerFactory.getToMapReducer<T, KeyType>(getter), new Map());
 }

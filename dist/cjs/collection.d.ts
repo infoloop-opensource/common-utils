@@ -2,7 +2,7 @@ import { BiTransformer, Transformer, Comparator } from "@infoloop-opensource/abs
 declare type ArrayElementMapper<ElementType, MappedType> = BiTransformer<ElementType, number, MappedType>;
 export declare function uniqueArray<T>(elements: T[], comparator?: (a: T, b: T) => number): T[];
 export declare function uniqueField<T, D>(elements: T[], getter: Transformer<T, D>, comparator?: Comparator<D>): D[];
-export declare function toMap<T, KeyType>(elements: T[], getter: (T: any, ith?: number) => KeyType): Map<KeyType, T>;
+export declare function toMap<T, KeyType>(elements: T[], getter: (element: T, ith?: number) => KeyType): Map<KeyType, T>;
 export declare function toTransformedMap<T, KeyType, TargetType>(elements: T[], getter: ArrayElementMapper<T, KeyType>, transformer: ArrayElementMapper<T, TargetType>): Map<KeyType, TargetType>;
 export declare function groupBy<T, KeyType>(elements: T[], getter: ArrayElementMapper<T, KeyType>): Map<KeyType, T[]>;
 export declare function groupTransformedBy<T, KeyType, TargetType>(elements: T[], getter: ArrayElementMapper<T, KeyType>, transformer: ArrayElementMapper<T, TargetType>): Map<KeyType, TargetType[]>;
