@@ -18,3 +18,7 @@ export {
     CollectionUtils,
     StringUtils
 }
+
+export {
+    toSimpleReloader,
+} from './wrappers';

@@ -11,3 +11,5 @@ var CollectionUtils = require("./collection");
 exports.CollectionUtils = CollectionUtils;
 var StringUtils = require("./string");
 exports.StringUtils = StringUtils;
+var wrappers_1 = require("./wrappers");
+exports.toSimpleReloader = wrappers_1.toSimpleReloader;
